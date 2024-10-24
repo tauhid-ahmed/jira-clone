@@ -2,7 +2,13 @@
 import { FcGoogle as GoogleIcon } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
 import { useForm } from "react-hook-form";
@@ -17,6 +23,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Link from "next/link";
 
 export default function SignInCard() {
   const form = useForm({
@@ -74,6 +81,12 @@ export default function SignInCard() {
           </form>
         </Form>
       </CardContent>
+      <CardFooter className="py-4 flex justify-center gap-1 mt-4">
+        Don&apos;t have an account?
+        <Link className="font-medium text-blue-700 text-sm" href="/sign-up">
+          Sign Up
+        </Link>
+      </CardFooter>
     </Card>
   );
 }
